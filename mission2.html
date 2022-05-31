@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mission2.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+
+<body style="background-image: url('background.jpg');">
+    <div id=header>
+        <div>
+            <h1 id="title">Chess For Beginners</h1>
+        </div>
+    </div>
+
+    <div id="body">
+        <div id="intro">
+            <h2>Introduction</h2>
+            <p>Chess is a board game played by 2 players. Each player takes turns moving a piece of their colour
+                (usually black or white), with the final objective of the game being to "Checkmate" the opposing player.
+                Each player starts with a total of 16 pieces consisting of 6 different types. There are:</p>
+            <ul>
+                <li>8 Pawns</li>
+                <li>2 Rooks (Also known as Castles)</li>
+                <li>2 Knights</li>
+                <li>2 Bishops</li>
+                <li>1 Queen</li>
+                <li>1 King</li>
+            </ul>
+            <h2>Board</h2>
+            <p>The chessboard is an 8 x 8 grid of alternating black and white squares. The person playing 'White' will
+                have their pieces arranged in the following order from left to right:</p>
+            <p>Rook, Knight, Bishop, Queen, King, Bishop, Knight, Rook</p>
+            <p>The second row, will be lined up with 8 pawns. 'Black's Pieces should mirror the positions of the white
+                pieces.</p>
+        </div>
+
+        <div id="movement-intro">
+            <h2>Movement and Attacking</h2>
+            <p>Each piece has it's own way of movement and attacking, Below are each of the pieces, accompanied by a description of how each piece moves.
+            </p>
+        </div>
+
+        <div id="piece-showcase">
+            <div id="piece-navbar">
+                <div id="row1">
+                <div class="piece-button" onclick="changePieceTO(0)">Pawn</div>
+                <div class="piece-button" onclick="changePieceTO(1)">Rook</div>
+                <div class="piece-button" onclick="changePieceTO(2)">Knight</div>
+                </div>
+                <div id="row2">
+                <div class="piece-button" onclick="changePieceTO(3)">Bishop</div>
+                <div class="piece-button" onclick="changePieceTO(4)">Queen</div>
+                <div class="piece-button" onclick="changePieceTO(5)">King</div>
+                </div>
+
+            </div>
+            <h2 id='piece-name' style="color: #969696;">Pawn</h2>
+            <div id="piece-change">
+                <div id="left" style="margin-right: 10px;" onclick="changePiece(-1)">
+                    <i class="fa fa-arrow-circle-o-left fa-2x"></i>
+                </div>
+                <div id="piece-img-holder"><img src="images/chess_piece_pawn.png" id="piece-img"></div>
+                <div id='right' style="margin-left: 10px;" onclick="changePiece(1)">
+                    <i class="fa fa-arrow-circle-o-right fa-2x"></i></div>
+            </div>
+
+            <div id="piece-desc">
+                <p> Each player starts with 8 pawns. The pawn can only move one step forward, except for on it's
+                first move when it has the option of moving 2 steps forward.
+                However, When attacking, it can only attack pieces that are diagonally infront (either left or
+                right),
+                and cannot attack pieces directly infront of it.</p>
+            </div>
+        </div>
+
+        <div id="ending-game">
+            <h2>Check, Checkmate & Stalemate</h2>
+            <p>When the King is in a position such that it can be taken by the opponent in their next turn, it is
+                said
+                to be in <i>Check</i>.
+                In this situation, the payer in <i>Check</i> must move their King out of danger, or place another
+                piece
+                to block the attack.</p>
+            <p>When the King is in <i>Check</i> and there is no way to get the King out of <i>Check</i> (King cannot
+                move
+                into a space where it is not under attack, and there are no other pieces that can block the attack)
+                , that is considered <i>Checkmate</i>, and that player loses.</p>
+            <p>Stalemate is when the King is not in Check, and the player has no move where the King is not placed
+                in
+                check, the game is considered in a <i>Stalemate</i> and ends in a draw.</p>
+        </div>
+
+    </div>
+
+    <script src="mission2.js"></script>
+</body>
+
+</html>
