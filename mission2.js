@@ -54,6 +54,7 @@ leftArrow.addEventListener('mouseover', () => {
 leftArrow.addEventListener('mouseout', () => {
     leftArrow.style.backgroundColor = 'transparent';
 });
+leftArrow.addEventListener('click', () => changePiece(-1));
 
 let rightArrow = document.getElementById('right');
 rightArrow.addEventListener('mouseover', () => {
@@ -62,3 +63,4 @@ rightArrow.addEventListener('mouseover', () => {
 rightArrow.addEventListener('mouseout', () => {
     rightArrow.style.backgroundColor = 'transparent';
 });
+rightArrow.addEventListener('click', () => changePiece(1));
