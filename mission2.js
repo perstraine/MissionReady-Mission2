@@ -7,7 +7,7 @@ class ChessPiece {
 }
 
 
-const pawn = new ChessPiece('Pawn', 'images/chess_piece_pawn.png', `<p> Each player starts with 8 pawns. The pawn can only move one step forward, except for on it's first move when it has the option of moving 2 steps forward. However, When attacking, it can only attack pieces that are diagonally infront(either left or right), and cannot attack pieces directly infront of it.</p>`);
+const pawn = new ChessPiece('Pawn', 'images/chess_piece_pawn.png', `<p> Each player starts with 8 pawns. The pawn can only move one step forward, except for on it's first move when it has the option of moving 2 steps forward. However, When attacking, it can only attack pieces that are diagonally infront (either left or right), and cannot attack pieces directly infront of it.</p>`);
 
 const rook = new ChessPiece('Rook', 'images/chess_piece_rook.png', `<p>Each player starts with 2 rooks. The rook can move any number of spaces in a horizontal or vertical direction. It also attacks the opponents pieces in the same way.</p>`);
 
@@ -22,7 +22,7 @@ const king = new ChessPiece('King', 'images/chess_piece_king.png', `<p>Each play
 const pieces = [pawn, rook, knight, bishop, queen, king];
 let currentIndex = 0;
 
-function changePiece(position) {
+/* function changePiece(position) {
     let holder = document.getElementById('piece-img-holder');
     let pieceDesc = document.getElementById('piece-desc');
     let pieceName = document.getElementById('piece-name')
@@ -36,15 +36,21 @@ function changePiece(position) {
     pieceName.innerHTML = pieces[currentIndex].name;
     holder.innerHTML = `<img src =${pieces[currentIndex].image} id ='piece-img'>`;
     pieceDesc.innerHTML = pieces[currentIndex].desc;
-}
+} */
 
 function changePieceTO(position) {
     let holder = document.getElementById('piece-img-holder');
     let pieceDesc = document.getElementById('piece-desc');
     let pieceName = document.getElementById('piece-name')
-    pieceName.innerHTML = pieces[position].name;
-    holder.innerHTML = `<img src =${pieces[position].image} id ='piece-img'>`;
-    pieceDesc.innerHTML = pieces[position].desc;
+    if (position < 0) {
+        currentIndex = 5;
+    }
+    else if (position > 5) {
+        currentIndex = 0;
+    } else { currentIndex = position; }
+    pieceName.innerHTML = pieces[currentIndex].name;
+    holder.innerHTML = `<img src =${pieces[currentIndex].image} id ='piece-img'>`;
+    pieceDesc.innerHTML = pieces[currentIndex].desc;
 }
 
 let leftArrow = document.getElementById('left');
@@ -54,7 +60,7 @@ leftArrow.addEventListener('mouseover', () => {
 leftArrow.addEventListener('mouseout', () => {
     leftArrow.style.backgroundColor = 'transparent';
 });
-leftArrow.addEventListener('click', () => changePiece(-1));
+leftArrow.addEventListener('click', () => changePieceTO(currentIndex-1));
 
 let rightArrow = document.getElementById('right');
 rightArrow.addEventListener('mouseover', () => {
@@ -63,4 +69,4 @@ rightArrow.addEventListener('mouseover', () => {
 rightArrow.addEventListener('mouseout', () => {
     rightArrow.style.backgroundColor = 'transparent';
 });
-rightArrow.addEventListener('click', () => changePiece(1));
+rightArrow.addEventListener('click', () => changePieceTO(currentIndex+1));
