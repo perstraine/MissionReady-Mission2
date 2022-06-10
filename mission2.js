@@ -37,6 +37,7 @@ let currentIndex = 0;
     holder.innerHTML = `<img src =${pieces[currentIndex].image} id ='piece-img'>`;
     pieceDesc.innerHTML = pieces[currentIndex].desc;
 } */
+//random comment
 
 function changePieceTO(position) {
     let holder = document.getElementById('piece-img-holder');
